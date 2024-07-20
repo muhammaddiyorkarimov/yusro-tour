@@ -1,0 +1,115 @@
+.opinion-section {
+	margin-top: 300px;
+	padding: 0 0 100px 0;
+	text-align: center;
+	position: relative;
+	background: url('../../images/pictures/img 10.jpg') no-repeat center center;
+	background-size: cover;
+	position: relative;
+}
+
+.opinion-section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.opinion-carousel {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	margin: 0 auto;
+	overflow: hidden;
+	z-index: 100;
+	margin-top: 30px;
+	background: url('../../images/pictures/3 in 1 bg.png') no-repeat top left;
+	background-size: cover;
+	overflow: hidden;
+	padding: 0 200px 0 300px;
+}
+
+.mySwiper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
+.swiper-slide {
+	display: flex;
+	gap: 20px;
+	color: var(--secondary-color);
+	z-index: 100;
+	transition: transform 0.5s ease-in-out;
+}
+
+.opinion-slide {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.opinion-image {
+	width: 300px;
+	height: 250px;
+	background-image: url('../../images/icons/help.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.opinion-image img {
+	width: 130px;
+	padding-bottom: 20px;
+	object-fit: cover;
+}
+
+.opinion-about {
+	width: 400px;
+	text-align: start;
+}
+
+.opinion-about .point {
+	color: orange;
+	font-size: 18px;
+}
+
+.opinion-about .theme {
+	font-size: 16px;
+	color: var(--secondary-color);
+	font-weight: 500;
+}
+
+.opinion-about .description {
+	color: grey;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.opinion-about h3 {
+	margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.opinion-about p {
+	margin-bottom: 10px;
+	font-size: 1em;
+}
+
+.error {
+	color: red;
+	font-size: 1.2em;
+}

@@ -1,0 +1,21 @@
+.about-us-experience {
+	display: flex;
+	gap: 50px;
+	align-items: center;
+	padding-top: -250px;
+}
+
+.about-us-experience .images {
+	display: flex;
+	gap: 20px;
+}
+
+.about-us-experience .images img {
+	width: 250px;
+	height: 400px;
+	object-fit: cover;
+}
+
+.about-us-experience .images img:nth-child(2) {
+	margin-top: 40px;
+}
