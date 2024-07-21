@@ -3,10 +3,10 @@ import './styles/experienceAbout.css'
 
 function ExperienceAbout() {
 	return (
-		<div>
+		<div className='container'>
 			<div className="about">
 				<img src={images.bismillah} alt="" />
-				<h1 className="title">Biz 7 yillik tajribaga ega sayohat agentligimiz</h1>
+				<h1 className="title">Biz 7 yillik tajribaga ega sayyohlik agentligimiz</h1>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, ex. Illo officiis architecto doloremque obcaecati eaque fugit iste libero sed.
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, eum?

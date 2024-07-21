@@ -40,4 +40,5 @@
 
 .extra-pages-header .container .about .bread-crumb {
 	z-index: 1;
+	text-transform: capitalize;
 }

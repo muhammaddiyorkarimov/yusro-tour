@@ -11,7 +11,6 @@
 	padding-bottom: 100px;
 }
 
-
 .our-amenities::before {
 	content: '';
 	position: absolute;
@@ -83,7 +82,7 @@
 }
 
 .our-amenities .amenities-title .cards .card2::before {
-	background-color: rgba(210,144,34, 0.9);
+	background-color: rgba(210, 144, 34, 0.9);
 }
 
 .our-amenities .amenities-title .cards .card img {
@@ -144,4 +143,61 @@
 .amenity-card p {
 	font-size: 16px;
 	font-weight: 600;
+}
+
+@media (max-width: 940px) {
+	.amenities-grid {
+		grid-template-columns: auto auto auto;
+	}
+}
+
+@media (max-width: 700px) {
+	.amenities-grid {
+		grid-template-columns: auto auto;
+	}
+}
+
+@media (max-width: 920px) {
+	.our-amenities .amenities-title .cards .card {
+		width: 300px;
+		height: 100px;
+	}
+}
+@media (max-width: 640px) {
+	.our-amenities .amenities-title .cards {
+		flex-direction: column;
+	}
+	.our-amenities .amenities-title .cards .card{
+		width: 100%;
+		width: 500px;
+		border-radius: 10px;
+	}
+}
+@media (max-width: 540px) {
+	.our-amenities .amenities-title .cards .card{
+		width: 400px;
+	}
+}
+@media (max-width: 420px) {
+	.our-amenities .amenities-title .cards .card{
+		width: 300px;
+	}
+}
+
+@media (max-width: 450px) {
+
+	.amenity-card {
+		padding: 10px;
+		width: 140px;
+		height: 140px;
+	}
+
+	.amenity-image {
+		width: 60px;
+		height: auto;
+	}
+
+	.amenity-card p {
+		font-size: 14px;
+	}
 }

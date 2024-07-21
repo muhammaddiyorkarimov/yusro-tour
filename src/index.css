@@ -51,3 +51,34 @@ input:focus {
 textarea:focus {
   outline: none;
 }
+
+@media (max-width: 1220px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+@media (max-width: 1120px) {
+  .container {
+    max-width: 900px;
+  }
+}
+@media (max-width: 970px) {
+  .container {
+    max-width: 800px;
+  }
+}
+@media (max-width: 850px) {
+  .container {
+    max-width: 700px;
+  }
+}
+@media (max-width: 750px) {
+  .container {
+    max-width: 600px;
+  }
+}
+@media (max-width: 650px) {
+  .container {
+    padding: 0 10px;
+  }
+}

@@ -62,3 +62,21 @@
 	font-size: 24px;
 	font-weight: 600;
 }
+
+@media (max-width: 970px) {
+	.contact-us-about {
+		padding: 0 20px;
+	}
+	.contact-us-about .about {
+		max-width: 100%;
+	}
+	.contact-us-about .container {
+		width: 100%;
+	}
+}
+@media (max-width: 640px) {
+	.contact-us-about .about .main-title {
+		font-size: 24px;
+		text-align: start;
+	}
+}

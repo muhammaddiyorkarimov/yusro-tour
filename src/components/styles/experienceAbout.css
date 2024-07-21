@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	width: 100%;
 }
 
 .agency-experience2 .about img {
@@ -14,8 +15,8 @@
 }
 
 .agency-experience2 .about .items {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: auto auto;
 	gap: 20px;
 }
 
@@ -38,4 +39,18 @@
 .agency-experience2 .about .items .item .item-image-wrapper img {
 	width: 100%;
 	object-fit: cover;
+}
+
+@media (max-width: 640px) {
+	.agency-experience2 .about h1 {
+		font-size: 32px;
+	}
+	.agency-experience2 .about .items {
+		grid-template-columns: auto;
+	}
+}
+@media (max-width: 450px) {
+	.agency-experience2 .about h1 {
+		font-size: 24px;
+	}
 }

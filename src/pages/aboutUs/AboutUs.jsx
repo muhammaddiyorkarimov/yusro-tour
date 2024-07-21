@@ -5,6 +5,7 @@ import images from '../../images';
 import AgencyResults from '../../components/AgencyResults';
 import Teams from '../../components/Teams';
 import Opinion from './../../components/Opinion';
+import Partners from './../../components/Partners';
 
 function AboutUs() {
 	return (
@@ -31,6 +32,9 @@ function AboutUs() {
 
 			{/* opinion */}
 			<Opinion/>
+
+			{/* partners */}
+			<Partners/>
 		</div>
 	)
 }

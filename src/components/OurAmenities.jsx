@@ -41,7 +41,9 @@ function OurAmenities() {
 					</div>
 				</div>
 
-				<Title img={images.kabah} title="Qulayliklarimiz" description="Haj va Umra ziyoratlarini birlashtirishda yuqori tajribaga ega"/>
+				<div style={{paddingTop: "80px"}}>
+					<Title img={images.kabah} title="Qulayliklarimiz" description="Haj va Umra ziyoratlarini birlashtirishda yuqori tajribaga ega" />
+				</div>
 
 				<div className="amenities-grid">
 					{amenities && amenities.map(amenity => (

@@ -31,10 +31,20 @@ function Opinion() {
         fetchOpinion();
     }, []);
 
+    const renderStars = (point) => {
+        const stars = [];
+        for (let i = 0; i < point; i++) {
+            stars.push('⭐');
+        }
+        return stars.join(' ');
+    };
+
     return (
         <div className='opinion-section'>
             <div className="container">
-                <Title img={images.kabah} title="Fikrlar" description="Har yili yuzlab mijozlar biz orqali safarga chiqishmoqda." />
+                <div className="title-wrapper">
+                    <Title img={images.kabah} title="Fikrlar" description="Har yili yuzlab mijozlar biz orqali safarga chiqishmoqda." />
+                </div>
                 <div className="opinion-carousel">
                     {loading ? (
                         <Loader />
@@ -42,13 +52,12 @@ function Opinion() {
                         <div className="error">{error}</div>
                     ) : (
                         <Swiper
-                            // slidesPerView={3}
                             spaceBetween={30}
                             pagination={{
                                 dynamicBullets: true,
                             }}
                             autoplay={{
-                                delay: 3000,
+                                delay: 5000,
                                 disableOnInteraction: false,
                             }}
                             modules={[Pagination, Autoplay]}
@@ -61,7 +70,7 @@ function Opinion() {
                                             <img src={opinion.image} alt={opinion.full_name} />
                                         </div>
                                         <div className="opinion-about">
-                                            <span className='point'>{opinion.point}</span>
+                                            <span className='point'>{renderStars(opinion.point)}</span>
                                             <p className='theme'>{opinion.theme}</p>
                                             <p className='description'>{opinion.text}</p>
                                             <h3 className='name'>{opinion.full_name}</h3>

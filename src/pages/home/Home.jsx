@@ -26,14 +26,14 @@ function Home() {
 			<Category />
 
 			{/* experience */}
-			<div style={{marginTop: '350px'}} className="agency-experience2 container">
+			<div className="agency-experience2 container">
 				<div className="image">
 					<div className="image-wrapper">
 						<img src={images.imageWrapper} alt="" />
 					</div>
 					<img src={images.forImageWrapper} alt="" className='for-wrapper' />
 				</div>
-				<ExperienceAbout/>
+				<ExperienceAbout />
 			</div>
 
 			{/* amenities */}
@@ -54,13 +54,15 @@ function Home() {
 			<TourPackages />
 
 			{/* opinon */}
-			<Opinion />
+			<div style={{ marginTop: '350px' }}>
+				<Opinion />
+			</div>
 
 			{/* partners */}
-			<Partners/>
+			<Partners />
 
 			{/* news */}
-			<News/>
+			<News />
 		</div>
 	)
 }

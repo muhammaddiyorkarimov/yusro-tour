@@ -1,11 +1,16 @@
 import "./rootLayout.css";
 import { Link, Outlet } from "react-router-dom";
 import images from "./../images/index";
-import Breadcrumb from "../helpers/Breadcrumb";
+import Sidebar from "../components/Sidebar";
+import { useState } from "react";
 
 function RootLayout() {
+
+	const [active, setActive] = useState(false)
+	
 	return (
 		<div className="root">
+			<Sidebar active={active} setActive={setActive}/>
 			<header>
 				<section className="main-head container">
 					<div className="social-media">
@@ -22,19 +27,22 @@ function RootLayout() {
 					</div>
 					<div className="navbar">
 						<Link to="/about-us">Biz haqimizda</Link>
-						<Link to="">Hamlorlik</Link>
+						<Link to="">Hamlorkik</Link>
 						<Link to="">Fikrlar</Link>
 						<Link to="">Umra</Link>
-						<Link to="">Haj</Link>
+						<Link to="/haj">Haj</Link>
 					</div>
 				</section>
 				<section className="container header-details">
-					<Link className="logo">
+					<Link className="logo main-logo">
 						<img src={images.logo} alt="" />
 						<span></span>
 					</Link>
 					<div className="details">
 						<div className="contacts">
+							<Link className="logo">
+								<img src={images.logo} alt="" />
+							</Link>
 							<div className="by-phonenumber">
 								<img src={images.phoneLogo} alt="" />
 								<div className="about">
@@ -49,9 +57,16 @@ function RootLayout() {
 									<p>admin@yusro.uz</p>
 								</div>
 							</div>
-							<div className="search">
-								<input type="text" placeholder="Qidirish" name="search" />
-								<i className="fa-solid fa-magnifying-glass"></i>
+							<div className="search-wrapper">
+								<div className="search">
+									<input type="text" placeholder="Qidirish" name="search" />
+									<i className="fa-solid fa-magnifying-glass"></i>
+								</div>
+								<div className="hamburger-menu" onClick={() => setActive(true)}>
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
 							</div>
 						</div>
 						<div className="navbar">

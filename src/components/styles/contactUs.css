@@ -68,3 +68,41 @@
 .form-wrapper button:hover {
 	background-color: #333;
 }
+
+@media (max-width: 500px) {
+	.contact-us-section .container {
+		padding: 10px;
+		background-size: 120%;
+	}
+
+	.form-wrapper {
+		margin-top: 5px;
+		padding: 50px 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.form-wrapper h2 {
+		padding-bottom: 20px;
+		font-size: 16px;
+	}
+
+	.form-wrapper form {
+		width: 80%;
+	}
+
+	.form-wrapper input,
+	.form-wrapper textarea {
+		margin-bottom: 10px;
+		padding: 5px;
+		font-size: 14px;
+	}
+
+	.form-wrapper input[type='text'],
+	.form-wrapper input[type='tel'],
+	.form-wrapper input[type='email'] {
+		height: 30px;
+	}
+}

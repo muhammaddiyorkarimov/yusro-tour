@@ -4,6 +4,7 @@ import RootLayout from '../layouts/RootLayout';
 import Home from '../pages/home/Home';
 import AboutUs from './../pages/aboutUs/AboutUs';
 import ErrorPage from '../helpers/ErrorPage';
+import Haj from './../pages/haj/Haj';
 
 function Routes() {
 	return createBrowserRouter(
@@ -12,6 +13,7 @@ function Routes() {
 				<Route path='/' element={<RootLayout />} errorElement={<ErrorPage />}>
 					<Route index element={<Home/>}/>
 					<Route path='/about-us' element={<AboutUs/>}/>
+					<Route path='/haj' element={<Haj/>}/>
 				</Route>
 			</>
 		)
