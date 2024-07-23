@@ -1,3 +1,33 @@
-.haj {
-	margin-top: 150px;
+.haj-page {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.haj-page .container {
+	margin-top: 50px;
+	display: flex;
+	align-items: start;
+	gap: 20px;
+	justify-content: space-between;
+}
+
+.haj-page .container .haj-about {
+	width: 50%;
+}
+
+.haj-page .container .items {
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media (max-width: 1120px) {
+	.haj-page .container .haj-about {
+		width: 100%;
+	}
+	.haj-page .container {
+		flex-direction: column;
+	}
 }

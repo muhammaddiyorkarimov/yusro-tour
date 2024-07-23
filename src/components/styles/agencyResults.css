@@ -135,3 +135,34 @@
 	font-size: 12px;
 	font-weight: 400;
 }
+
+@media (max-width: 970px) {
+	.agency-results {
+		padding: 50px 0;
+	}
+
+	.agency-results .container {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.agency-results .container .about {
+		width: 100%;
+	}
+
+
+	.agency-results .container .about .image {
+		width: 100%;
+	}
+	.agency-results .container .cards {
+		width: 100%;
+		gap: 10px;
+	}
+}
+
+@media (max-width: 650px) {
+	.agency-results .container .about .title {
+		font-size: 24px;
+	}
+}

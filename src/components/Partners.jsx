@@ -1,36 +1,34 @@
 import { useEffect, useState } from 'react';
 import './styles/partners.css'
-import TotalCommand from '../service/TotalCommand';
 import Loader from '../ui/Loader';
 import Title from '../ui/Title';
 import images from '../images';
 
 function Partners() {
 
-	const [partnersData, setPartnersData] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	// const [partnersData, setPartnersData] = useState([]);
+	// const [loading, setLoading] = useState(true);
+	// const [error, setError] = useState(null);
 
-	useEffect(() => {
-		async function fetchPartners() {
-			try {
-				const data = await TotalCommand.getPartners();
-				setPartnersData(data);
-				setLoading(false);
-			} catch (error) {
-				setError(error);
-				setLoading(false);
-			}
-		}
+	// useEffect(() => {
+	// 	async function fetchPartners() {
+	// 		try {
+	// 			const data = await TotalCommand.getPartners();
+	// 			setPartnersData(data);
+	// 			setLoading(false);
+	// 		} catch (error) {
+	// 			setError(error);
+	// 			setLoading(false);
+	// 		}
+	// 	}
 
-		fetchPartners();
-	}, []);
+	// 	fetchPartners();
+	// }, []);
 
-	console.log(partnersData);
 
 	return (
 		<div className='partners'>
-			{loading ? (
+			{/* {loading ? (
 				<Loader />
 			) : error ? (
 				<div className="error">{error}</div>
@@ -55,7 +53,7 @@ function Partners() {
 						</div>
 					)
 				})}
-			</div>}
+			</div>} */}
 		</div>
 	)
 }

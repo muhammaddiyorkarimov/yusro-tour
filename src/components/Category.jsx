@@ -1,47 +1,42 @@
-import './styles/category.css'
+import './styles/category.css';
 import images from './../images/index';
 import Title from '../ui/Title';
+import Loader from '../ui/Loader';
+// api
+import ServiceItem from './../service/serviceItem';
+// hooks
+import useFetch from './../hooks/useFetch';
 
 function Category() {
-	return (
-		<div className='category'>
-			<div className="container">
-				<Title img={images.kabah} title="Bizning takliflar" description="Biz sizga ishonchli bo'lgan xizmatlarni taklif qilamiz" />
-				<div className="cards">
-					<div className="card">
-						<div className="header-image">
-							<img src={images.categoryCard1} alt="" />
-						</div>
-						<img src={images.kabahWrapper} alt="" className='header-image-icon' />
-						<div className="title">Umra taklifi</div>
-						<div className="description">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laboriosam ducimus iusto quasi modi? Incidunt ut perspiciatis dolore aut autem.
-						</div>
-					</div>
-					<div className="card">
-						<div className="header-image">
-							<img src={images.categoryCard2} alt="" />
-						</div>
-						<img src={images.kabahWrapper} alt="" className='header-image-icon' />
-						<div className="title">Umra taklifi</div>
-						<div className="description">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laboriosam ducimus iusto quasi modi? Incidunt ut perspiciatis dolore aut autem.
-						</div>
-					</div>
-					<div className="card">
-						<div className="header-image">
-							<img src={images.categoryCard3} alt="" />
-						</div>
-						<img src={images.kabahWrapper} alt="" className='header-image-icon' />
-						<div className="title">Umra taklifi</div>
-						<div className="description">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laboriosam ducimus iusto quasi modi? Incidunt ut perspiciatis dolore aut autem.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	)
+    const { data, loading, error } = useFetch(ServiceItem.getAgencyServices);
+
+    return (
+        <div className='category'>
+            <div className="container">
+                <Title img={images.kabah} title="Bizning takliflar" description="Biz sizga ishonchli bo'lgan xizmatlarni taklif qilamiz" />
+                <div className="cards">
+                    {
+                        loading ? <Loader /> : error ? <h1>{error.message}</h1> : <>
+                            {data && data.length > 0 ? data.map((category, index) => {
+                                return (
+                                    <div key={category.id} className="card">
+                                        <div className="header-image">
+                                            <img src={category.background_path} alt="" />
+                                        </div>
+                                        <img src={category.logo_path} alt="" className='header-image-icon' />
+                                        <div className="title">{category.name}</div>
+                                        <div className="description">
+                                            {category.description}
+                                        </div>
+                                    </div>
+                                )
+                            }) : <h1>Ma'lumot mavjud emas</h1>}
+                        </>
+                    }
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default Category
+export default Category;

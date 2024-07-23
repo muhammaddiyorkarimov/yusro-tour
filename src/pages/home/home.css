@@ -98,8 +98,8 @@
 }
 
 .contact-us {
+	padding: 50px 0;
 	position: relative;
-	min-height: 90vh;
 	margin: 10px auto;
 	z-index: 100;
 	background-color: #fff;
@@ -143,6 +143,9 @@
 	}
 	.contact-us .container {
 		flex-direction: column;
+	}
+	.contact-us::before {
+		width: 100%;
 	}
 }
 

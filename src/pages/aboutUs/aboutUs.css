@@ -19,3 +19,23 @@
 .about-us-experience .images img:nth-child(2) {
 	margin-top: 40px;
 }
+
+@media (max-width: 1120px) {
+	.about-us-experience {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 650px) {
+	.about-us-experience .images {
+		margin-top: 50px;
+		width: 100%;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.about-us-experience .images img {
+		height: 250px;
+		width: 100%;
+	}
+}

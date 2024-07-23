@@ -1,4 +1,4 @@
-import './styles/teams.css'
+import './styles/teams.css';
 import Title from './../ui/Title';
 import images from '../images';
 
@@ -17,10 +17,24 @@ function Teams() {
 				<Title img={images.kabah} title='Jamoa bilan tanishing' description="Malakali jamoa a'zolari sizga o'z xizmatlarini taklif qiladi" />
 				<div className='carousel'>
 					<Swiper
-						slidesPerView={3}
+						slidesPerView='1'
 						spaceBetween={30}
 						pagination={{
 							dynamicBullets: true,
+						}}
+						breakpoints={{
+							400: {
+								slidesPerView: '1',
+								spaceBetween: 20,
+							},
+							550: {
+								slidesPerView: '2',
+								spaceBetween: 20,
+							},
+							850: {
+								slidesPerView: '3',
+								spaceBetween: 20,
+							},
 						}}
 						modules={[Pagination]}
 						className="mySwiper"
@@ -39,7 +53,7 @@ function Teams() {
 								<img src={images.muslim} alt="" />
 							</div>
 							<div className="about">
-								<div className="name">Maxmudox Shoxrux</div>
+								<div class="name">Maxmudox Shoxrux</div>
 								<div className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, eum.</div>
 							</div>
 						</SwiperSlide>
@@ -65,7 +79,7 @@ function Teams() {
 				</div>
 			</div>
 		</div>
-	)
+	);
 }
 
 export default Teams;

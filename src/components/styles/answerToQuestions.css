@@ -1,0 +1,57 @@
+.haj-page .container .items .answer-to-questions {
+	width: 300px;
+	height: 250px;
+	background-image: url('../../images/pictures/category card2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	padding: 10px;
+	margin-bottom: 50px;
+}
+
+.haj-page .container .items .answer-to-questions::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 1;
+}
+
+.haj-page .container .items .answer-to-questions .title {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	z-index: 1;
+}
+
+.haj-page .container .items .answer-to-questions .title h1 {
+	color: var(--primary-color);
+	font-size: 24px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.haj-page .container .items .answer-to-questions .title p {
+	color: var(--primary-color);
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.haj-page .container .items .answer-to-questions a {
+	z-index: 1;
+	color: var(--primary-color);
+	padding: 7px 15px;
+	border-radius: 30px;
+	background-color: var(--primary-main-color);
+	width: max-content;
+}

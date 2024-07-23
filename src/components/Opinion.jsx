@@ -5,43 +5,42 @@ import 'swiper/css/autoplay';
 import './styles/opinion.css';
 import images from '../images';
 import Title from './../ui/Title';
-import TotalCommand from '../service/TotalCommand';
 import Loader from './../ui/Loader';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 
 function Opinion() {
-    const [opinionsData, setOpinionsData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    // const [opinionsData, setOpinionsData] = useState([]);
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(null);
 
-    useEffect(() => {
-        async function fetchOpinion() {
-            try {
-                const data = await TotalCommand.getOpinions();
-                setOpinionsData(data);
-                setLoading(false);
-            } catch (error) {
-                setError(error);
-                setLoading(false);
-            }
-        }
+    // useEffect(() => {
+    //     async function fetchOpinion() {
+    //         try {
+    //             const data = await TotalCommand.getOpinions();
+    //             setOpinionsData(data);
+    //             setLoading(false);
+    //         } catch (error) {
+    //             setError(error);
+    //             setLoading(false);
+    //         }
+    //     }
 
-        fetchOpinion();
-    }, []);
+    //     fetchOpinion();
+    // }, []);
 
-    const renderStars = (point) => {
-        const stars = [];
-        for (let i = 0; i < point; i++) {
-            stars.push('⭐');
-        }
-        return stars.join(' ');
-    };
+    // const renderStars = (point) => {
+    //     const stars = [];
+    //     for (let i = 0; i < point; i++) {
+    //         stars.push('⭐');
+    //     }
+    //     return stars.join(' ');
+    // };
 
     return (
         <div className='opinion-section'>
-            <div className="container">
+            {/* <div className="container">
                 <div className="title-wrapper">
                     <Title img={images.kabah} title="Fikrlar" description="Har yili yuzlab mijozlar biz orqali safarga chiqishmoqda." />
                 </div>
@@ -81,7 +80,7 @@ function Opinion() {
                         </Swiper>
                     )}
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

@@ -22,6 +22,7 @@ function Sidebar({ active, setActive }) {
                     <Link to="" onClick={handleLinkClick}>Fikrlar</Link>
                     <Link to="" onClick={handleLinkClick}>Umra</Link>
                     <Link to="/haj" onClick={handleLinkClick}>Haj</Link>
+                    <Link to="/contact" onClick={handleLinkClick}>Aloqa</Link>
                 </div>
             </div>
             <div className="sidebar-footer">

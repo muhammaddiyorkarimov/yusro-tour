@@ -213,7 +213,7 @@ header .main-head .navbar a:hover {
 /* footer */
 footer {
 	position: relative;
-	margin-top: 270px;
+	margin-top: 150px;
 }
 
 .footer-top-section {
@@ -527,39 +527,47 @@ p {
 		width: 100%;
 		justify-content: space-between;
 	}
+	footer {
+		margin-top: 70px;
+	}
 }
 
 @media (max-width: 850px) {
 	.hamburger-menu {
 		display: flex !important;
 	}
-	.main-head, .by-phonenumber, .by-emailadress {
+
+	.main-head,
+	.by-phonenumber,
+	.by-emailadress {
 		display: none !important;
 	}
 }
+
 @media (max-width: 650px) {
 	.header-details .navbar {
 		gap: 20px;
 	}
-	
+
 	.header-details .navbar a {
 		font-size: 14px;
 	}
-	
+
 	.header-details .navbar a:active {
 		font-size: 14px;
 	}
 }
+
 @media (max-width: 500px) {
 	.header-details .navbar {
 		gap: 10px;
 	}
-	
+
 	.header-details .navbar a {
 		font-size: 12px;
 		text-transform: capitalize;
 	}
-	
+
 	.header-details .navbar a:active {
 		font-size: 14px;
 	}
@@ -570,32 +578,38 @@ p {
 	.footer-top-section {
 		padding: 30px;
 	}
+
 	.footer-top-section .about i {
 		color: var(--primary-color);
 		font-size: 64px;
 	}
+
 	.footer-top-section .about .info p {
 		font-size: 24px;
 	}
 
 	.main-footer-details {
-		grid-template-columns: auto auto auto ;
+		grid-template-columns: auto auto auto;
 		row-gap: 20px;
 	}
+
 	.footer-bottom {
 		flex-direction: column;
 		gap: 20px;
 		align-items: start;
 	}
 }
+
 @media (max-width: 970px) {
 	.footer-top-section {
 		padding: 20px;
 	}
+
 	.footer-top-section .about i {
 		color: var(--primary-color);
 		font-size: 48px;
 	}
+
 	.footer-top-section .about .info p {
 		font-size: 20px;
 	}
@@ -604,17 +618,21 @@ p {
 		height: 40px;
 		width: 50%;
 	}
+
 	.footer-top-section .send-phoneNumber input {
 		font-size: 14px;
 	}
+
 	.footer-top-section .send-phoneNumber i {
 		font-size: 14px;
 	}
 }
+
 @media (max-width: 650px) {
 	.footer-top-section {
 		flex-direction: column;
 	}
+
 	.footer-top-section .about {
 		width: 100%;
 		padding: 20px;
@@ -622,39 +640,46 @@ p {
 		align-items: center;
 		justify-content: center;
 	}
+
 	.footer-top-section .send-phoneNumber {
 		padding: 20px;
 		width: 80%;
 		margin-bottom: 20px;
 	}
+
 	.footer-top-section .send-phoneNumber i {
 		color: var(--primary-main-color);
 	}
 }
+
 @media (max-width: 860px) {
 	.main-footer {
 		padding-top: 120px;
 	}
+
 	.main-footer-details {
 		padding-top: 0;
 	}
+
 	.main-footer-details {
 		grid-template-columns: auto auto;
 		row-gap: 30px;
 	}
 }
+
 @media (max-width: 550px) {
 	.main-footer-details {
 		grid-template-columns: auto;
 		row-gap: 30px;
 	}
+
 	.footer-top-section .info span {
 		display: none;
 	}
+
 	.footer-bottom .payment {
 		flex-direction: column;
 		align-items: start;
 		gap: 5px;
 	}
 }
-

@@ -1,8 +1,8 @@
 .contact-us-section {
-	padding-top: 20px;
+	margin-top: 50px;
 }
 
-.contact-us-section .container {
+.contact-us-section {
 	padding: 30px;
 	height: 100%;
 	background: url('../../images/icons/help.png');
@@ -12,22 +12,28 @@
 }
 
 .form-wrapper {
-	padding: 50px;
-	margin-top: 30px;
-	max-width: 400px;
-	width: 100%;
+	padding: 20px;
+	margin-top: 20px;
+	width: 400px;
+	height: 400px;
 	text-align: center;
 	position: relative;
 	color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .form-wrapper h2 {
 	padding-bottom: 20px;
-	font-size: 18px;
+	font-size: 22px;
 }
 
 .form-wrapper form {
 	display: flex;
+	align-self: center;
+	width: 80%;
 	flex-direction: column;
 }
 
@@ -70,12 +76,10 @@
 }
 
 @media (max-width: 500px) {
-	.contact-us-section .container {
-		padding: 10px;
-		background-size: 120%;
-	}
 
 	.form-wrapper {
+		width: 320px;
+		height: 330px;
 		margin-top: 5px;
 		padding: 50px 20px;
 		display: flex;
@@ -90,11 +94,14 @@
 	}
 
 	.form-wrapper form {
-		width: 80%;
+		width: 100%;
+		padding: 15px;
 	}
 
 	.form-wrapper input,
 	.form-wrapper textarea {
+		/* width: 200px !important; */
+		width: 100%;
 		margin-bottom: 10px;
 		padding: 5px;
 		font-size: 14px;

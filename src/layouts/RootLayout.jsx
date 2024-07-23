@@ -27,10 +27,11 @@ function RootLayout() {
 					</div>
 					<div className="navbar">
 						<Link to="/about-us">Biz haqimizda</Link>
-						<Link to="">Hamlorkik</Link>
+						<Link to="">Hamkorlik</Link>
 						<Link to="">Fikrlar</Link>
 						<Link to="">Umra</Link>
 						<Link to="/haj">Haj</Link>
+						<Link to="/contact">Aloqa</Link>
 					</div>
 				</section>
 				<section className="container header-details">
@@ -72,7 +73,7 @@ function RootLayout() {
 						<div className="navbar">
 							<Link className="active">Bosh safiha</Link>
 							<Link>Paketlar</Link>
-							<Link>Blog</Link>
+							<Link to='/blog'>Blog</Link>
 							<Link>Bilish foydali</Link>
 							<Link>Media</Link>
 						</div>

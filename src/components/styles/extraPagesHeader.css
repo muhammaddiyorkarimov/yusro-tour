@@ -23,7 +23,7 @@
 	z-index: 1;
 }
 
-.extra-pages-header .container .about {
+.extra-pages-header .about {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -31,14 +31,25 @@
 	gap: 20px;
 }
 
-.extra-pages-header .container .about .title {
+.extra-pages-header .about .title {
 	font-size: 48px;
 	font-weight: 600;
 	color: var(--primary-color);
 	z-index: 1;
 }
 
-.extra-pages-header .container .about .bread-crumb {
+.extra-pages-header .about .bread-crumb {
 	z-index: 1;
 	text-transform: capitalize;
+}
+
+@media (max-width: 850px) {
+	.extra-pages-header {
+		margin-top: 100px;
+	}
+}
+@media (max-width: 650px) {
+	.extra-pages-header {
+		margin-top: 50px;
+	}
 }

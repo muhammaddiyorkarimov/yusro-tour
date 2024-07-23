@@ -2,8 +2,12 @@ import React from 'react';
 import images from '../images';
 import Title from '../ui/Title';
 import './styles/tourPackages.css';
+import useFetch from './../hooks/useFetch';
+import Travel from '../service/travel';
 
 function TourPackages() {
+	const { data, loading, error } = useFetch(Travel.getPlaces);
+	console.log(data, error);
 	return (
 		<div className='tour-packages container'>
 			<Title img={images.kabah} title="Bizning tur paketlarimiz" description="Maxsus paketlarni o'tkazib yubormang" />
@@ -23,44 +27,42 @@ function TourPackages() {
 						<span className="price">$700</span>
 						<ul>
 							<span>O'z ichiga oladi:</span>
-							<li><i className="fa-solid fa-check"></i> Paket Davomiyligi: (10-14 Day)</li>
-							<li><i className="fa-solid fa-check"></i> Besh yulduzli mehmonxonada turar joy</li>
-							<li><i className="fa-solid fa-check"></i> Shaxsiy Hojiboshi bilan bo'ling</li>
-							<li><i className="fa-solid fa-check"></i> Shaxsiy VIP avtobuslardan foydalaning</li>
+							<li><i className="fa-solid fa-check"></i> <span>Paket Davomiyligi: (10-14 Day)</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Besh yulduzli mehmonxonada turar joy</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Shaxsiy Hojiboshi bilan bo'ling</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Shaxsiy VIP avtobuslardan foydalaning</span></li>
 						</ul>
 						<button className="order-btn">BUYURTMA QILING</button>
 					</div>
 				</div>
 				<div className="package">
 					<div className="package-image">
-						<img src={images.categoryCard2} alt="Standard Package" />
+						<img src={images.categoryCard2} alt="Start Package" />
 					</div>
 					<div className="package-content">
-						<h3>STANDART</h3>
-						<span className="price">$900</span>
+						<h3>START</h3>
+						<span className="price">$700</span>
 						<ul>
-							<span>O'z ichiga oladi:</span>
-							<li><i className="fa-solid fa-check"></i> Paket Davomiyligi: (10-14 Day)</li>
-							<li><i className="fa-solid fa-check"></i> Besh yulduzli mehmonxonada turar joy</li>
-							<li><i className="fa-solid fa-check"></i> Shaxsiy Hojiboshi bilan bo'ling</li>
-							<li><i className="fa-solid fa-check"></i> Shaxsiy VIP avtobuslardan foydalaning</li>
+							<li><i className="fa-solid fa-check"></i> <span>Paket Davomiyligi: (10-14 Day)</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Besh yulduzli mehmonxonada turar joy</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Shaxsiy Hojiboshi bilan bo'ling</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Shaxsiy VIP avtobuslardan foydalaning</span></li>
 						</ul>
 						<button className="order-btn">BUYURTMA QILING</button>
 					</div>
 				</div>
 				<div className="package">
 					<div className="package-image">
-						<img src={images.categoryCard3} alt="Econom Package" />
+						<img src={images.categoryCard3} alt="Start Package" />
 					</div>
 					<div className="package-content">
-						<h3>EKONOM</h3>
-						<span className="price">$1100</span>
+						<span className="price">$700</span>
+						<h3>START</h3>
 						<ul>
-							<span>O'z ichiga oladi:</span>
-							<li><i className="fa-solid fa-check"></i> Paket Davomiyligi: (10-14 Day)</li>
-							<li><i className="fa-solid fa-check"></i> Besh yulduzli mehmonxonada turar joy</li>
-							<li><i className="fa-solid fa-check"></i> Shaxsiy Hojiboshi bilan bo'ling</li>
-							<li><i className="fa-solid fa-check"></i> Shaxsiy VIP avtobuslardan foydalaning</li>
+							<li><i className="fa-solid fa-check"></i> <span>Paket Davomiyligi: (10-14 Day)</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Besh yulduzli mehmonxonada turar joy</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Shaxsiy Hojiboshi bilan bo'ling</span></li>
+							<li><i className="fa-solid fa-check"></i> <span>Shaxsiy VIP avtobuslardan foydalaning</span></li>
 						</ul>
 						<button className="order-btn">BUYURTMA QILING</button>
 					</div>
