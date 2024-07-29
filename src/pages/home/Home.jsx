@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom'
 import './home.css'
-import Category from '../../components/Category'
-import images from '../../images'
-import OurAmenities from './../../components/OurAmenities';
-import AgencyExperience from '../../components/AgencyExperience';
-import ContactUs from '../../components/ContactUs';
-import TourPackages from '../../components/TourPackages';
-import Opinion from '../../components/Opinion';
-import ContactAboutSection from '../../components/ContactAboutSection';
-import Partners from '../../components/Partners';
-import News from '../../components/News';
-import ExperienceAbout from '../../components/ExperienceAbout';
+import Category from './../../components/category/Category';
+import images from './../../images/index';
+import OurAmenities from './../../components/ourAmenities/OurAmenities';
+import AgencyExperience from './../../components/agencyExperience/AgencyExperience';
+import ContactUs from './../../components/contactUs/ContactUs';
+import TourPackages from './../../components/tourPackages/TourPackages';
+import Opinion from './../../components/opinion/Opinion';
+import ContactAboutSection from './../../components/contactAboutSection/ContactAboutSection';
+import Partners from './../../components/partners/Partners';
+import News from './../../components/news/News';
+import ExperienceAbout from './../../components/experienceAbot/ExperienceAbout';
 
 function Home() {
 	return (
@@ -19,7 +19,7 @@ function Home() {
 				<div className="container">
 					<span>Haj & umra turizm agentligi</span>
 					<h1>yusro agentligining <br />rasmiy sahifasiga <br /> xush kelibsiz!</h1>
-					<Link>Bizning paketlarimiz</Link>
+					<Link to='/packages'>Bizning paketlarimiz</Link>
 				</div>
 			</div>
 			{/* category */}
@@ -54,9 +54,7 @@ function Home() {
 			<TourPackages />
 
 			{/* opinon */}
-			<div style={{ marginTop: '350px' }}>
 				<Opinion />
-			</div>
 
 			{/* partners */}
 			<Partners />

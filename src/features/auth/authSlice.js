@@ -1,28 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
+// features/auth/authSlice.js
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    isLoading: false,
-    isLoggedIn: false,
-    error: null,
     user: null,
+    isLoading:false,
+    error: null,
 };
 
-export const authSlice = createSlice({
+const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        signInUserStart: state => {
-            state.isLoading = true;
+        signInUserStart: (state, action) => {
+            state.isLoading = true; // Contact yoki newsletter uchun
+            state.error = null;
         },
         signInUserSuccess: (state, action) => {
-            state.isLoading = false;
-            state.isLoggedIn = true;
-            state.user = action.payload;
+            state.user = action.payload.user;
+            state.isLoading = false; // Contact yoki newsletter uchun
             state.error = null;
         },
         signInUserFailure: (state, action) => {
-            state.isLoading = false;
-            state.error = action.payload;
+            state.isLoading = false; // Contact yoki newsletter uchun
+            state.error = action.payload.error;
         },
     },
 });

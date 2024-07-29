@@ -1,56 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import ReactPaginate from 'react-paginate';
 import './blog.css';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import useQueryParams from './../../hooks/useQueryParams';
+import Loader from './../../ui/Loader';
+import ArticleList from './../../components/articleList/ArticleList';
+import PopularPosts from './../../components/popularPosts/PopularPosts';
+import AnswerToQuestions from './../../components/answerToQuestions/AnswerToQuestions';
+import PostSection from './../../components/postSection/PostSection';
+import PostTags from './../../components/postTags/PostTags';
+import ExtraPagesHeader from './../../components/extraPagesHeader/ExtraPagesHeader';
+import Pagination from './../../helpers/Pagination';
+import { fetchArticles } from './../../features/alice/articlesSlice';
+import NotAvailable from './../../helpers/NotAvailable';
 
 const Blog = () => {
+  const { params, updateQueryParams } = useQueryParams();
+  const { page, pageSize, categoryId } = params;
+
+  const dispatch = useDispatch();
+  const { data, status, error } = useSelector(state => state.articles);
+
+  useEffect(() => {
+    dispatch(fetchArticles({ page, pageSize, categoryId }));
+  }, [dispatch, page, pageSize, categoryId]);
+
+  const handlePageChange = (newPage) => {
+    updateQueryParams({ page: newPage, page_size: pageSize, category_id: categoryId });
+  };
+
+  const pageCount = data.length > 0 ? Math.ceil((data.length / pageSize) + 1) : 1;
 
 
-    const [blogs, setBlogs] = useState([]);
-    const [pageCount, setPageCount] = useState(0);
-    const [currentPage, setCurrentPage] = useState(0);
-    const blogsPerPage = 3;
-
-    useEffect(() => {
-        const fetchBlogs = async (page = 1) => {
-            const response = await axios.get(`/api/blogs?page=${page}&limit=${blogsPerPage}`);
-            setBlogs(response.data.blogs);
-            setPageCount(Math.ceil(response.data.total / blogsPerPage));
-        };
-        fetchBlogs(currentPage + 1);
-    }, [currentPage]);
-
-    const handlePageClick = (data) => {
-        setCurrentPage(data.selected);
-    };
-
-    return (
-        <div className="blog-container">
-            <div className="container">
-                {blogs.map((blog, index) => (
-                    <div key={index} className="blog-post">
-                        <img src={blog.image} alt={blog.title} className="blog-image" />
-                        <h2>{blog.title}</h2>
-                        <p>{blog.description}</p>
-                        <a href={`/blog/${blog.id}`}>To'liq ma'lumot</a>
-                    </div>
-                ))}
-                <ReactPaginate
-                    previousLabel={'<'}
-                    nextLabel={'>'}
-                    breakLabel={'...'}
-                    breakClassName={'break-me'}
-                    pageCount={pageCount}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={3}
-                    onPageChange={handlePageClick}
-                    containerClassName={'pagination'}
-                    subContainerClassName={'pages pagination'}
-                    activeClassName={'active'}
-                />
-            </div>
+  return (
+    <div className='blog'>
+      <ExtraPagesHeader title="Maqolalar" />
+      <div className="container">
+        {status === 'loading' ? <Loader /> : status === 'failed' ? <NotAvailable name={error} /> : (
+          <>
+            {!data ? <NotAvailable name="Ma'lumot mavjud emas" /> : <div className="blog-pagination">
+              <ArticleList articles={data} />
+              <Pagination
+                currentPage={page}
+                pageCount={pageCount}
+                onPageChange={handlePageChange}
+              />
+            </div>}
+          </>
+        )}
+        <div className="blog-tags">
+          <PopularPosts />
+          <AnswerToQuestions />
+          <PostSection />
+          <PostTags />
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Blog;

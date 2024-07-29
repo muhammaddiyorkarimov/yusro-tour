@@ -1,16 +1,57 @@
 import "./rootLayout.css";
 import { Link, Outlet } from "react-router-dom";
 import images from "./../images/index";
-import Sidebar from "../components/Sidebar";
 import { useState } from "react";
+import UiInput from './../ui/UiInput';
+import { useDispatch, useSelector } from "react-redux";
+import AuthService from './../service/auth';
+import { signInUserFailure, signInUserStart, signInUserSuccess } from "../features/auth/authSlice";
+import Sidebar from './../components/sidebar/Sidebar';
+import ValidateForm from "../helpers/ValidateForm";
 
 function RootLayout() {
 
 	const [active, setActive] = useState(false)
-	
+	const [phoneNumber, setPhoneNumber] = useState('');
+	const [formErrors, setFormErrors] = useState({});
+	const [placeholder, setPlaceholder] = useState({});
+	const [successMessage, setSuccessMessage] = useState('');
+
+	const dispatch = useDispatch();
+	const { isLoading, error } = useSelector(state => state.auth);
+
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const { errors, placeholders } = ValidateForm({phoneNumber});
+		if (Object.keys(errors).length > 0) {
+			setFormErrors(errors);
+			setPlaceholder(placeholders);
+			setTimeout(() => setPlaceholder({}), 3000);
+			return;
+		}
+
+		dispatch(signInUserStart());
+		const user = { phone_number: phoneNumber };
+		try {
+			const response = await AuthService.newsletterCreate(user);
+			dispatch(signInUserSuccess({ user: response.user, type: 'newsletter' }));
+			setPhoneNumber('');
+			setFormErrors({});
+			setPlaceholder({});
+			setSuccessMessage('Muvaffaqiyatli!');
+			setTimeout(() => {
+				setSuccessMessage('');
+			}, 3000);
+		} catch (error) {
+			dispatch(signInUserFailure({ error: error.response.data.errors, type: 'newsletter' }));
+		}
+	};
+
+
 	return (
 		<div className="root">
-			<Sidebar active={active} setActive={setActive}/>
+			<Sidebar active={active} setActive={setActive} />
 			<header>
 				<section className="main-head container">
 					<div className="social-media">
@@ -29,7 +70,7 @@ function RootLayout() {
 						<Link to="/about-us">Biz haqimizda</Link>
 						<Link to="">Hamkorlik</Link>
 						<Link to="">Fikrlar</Link>
-						<Link to="">Umra</Link>
+						<Link to="/umra">Umra</Link>
 						<Link to="/haj">Haj</Link>
 						<Link to="/contact">Aloqa</Link>
 					</div>
@@ -71,11 +112,10 @@ function RootLayout() {
 							</div>
 						</div>
 						<div className="navbar">
-							<Link className="active">Bosh safiha</Link>
-							<Link>Paketlar</Link>
+							<Link to='/' className="active">Bosh safiha</Link>
+							<Link to='/packages'>Paketlar</Link>
 							<Link to='/blog'>Blog</Link>
-							<Link>Bilish foydali</Link>
-							<Link>Media</Link>
+							<Link to='/video-content'>Video kontent</Link>
 						</div>
 					</div>
 				</section>
@@ -94,10 +134,28 @@ function RootLayout() {
 								<span>Eng so'ngi yangiliklar faqat bizda!</span>
 							</div>
 						</div>
-						<div className="send-phoneNumber">
-							<input type="text" placeholder="Telefon raqamingizni kiriting" />
-							<i className="fa-regular fa-paper-plane"></i>
-						</div>
+						<form className="send-phoneNumber">
+							{isLoading ? <div className='success-message'>
+								<h2>Yuborilmoqda...</h2>
+							</div> : successMessage ? (
+								<div className='success-message'>
+									<h2>{successMessage}</h2>
+								</div>
+							) : (
+								<>
+									<UiInput
+										type='text'
+										state={phoneNumber}
+										setState={setPhoneNumber}
+										placeholder={placeholder.phoneNumber || 'Telefon raqamingizni kiriting'}
+										hasError={!!formErrors.phoneNumber}
+									/>
+									<button onClick={handleSubmit} type="submit">
+										<i className="fa-regular fa-paper-plane"></i>
+									</button>
+								</>
+							)}
+						</form>
 					</div>
 				</div>
 				<div className="main-footer">

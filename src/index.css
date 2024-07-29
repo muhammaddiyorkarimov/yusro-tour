@@ -20,6 +20,20 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+	width: 10px;
+	overflow: hidden;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: var(--primary-main-color);
+}
+
+body::-webkit-scrollbar-track {
+	background: #f1f1f1;
+
+}
+
 .container {
   width: 100%;
   max-width: 1200px;

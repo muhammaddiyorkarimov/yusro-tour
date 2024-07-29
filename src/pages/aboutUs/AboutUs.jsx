@@ -1,11 +1,11 @@
 import './aboutUs.css'
-import ExtraPagesHeader from './../../components/ExtraPagesHeader';
-import ExperienceAbout from './../../components/ExperienceAbout';
-import images from '../../images';
-import AgencyResults from '../../components/AgencyResults';
-import Teams from '../../components/Teams';
-import Opinion from './../../components/Opinion';
-import Partners from './../../components/Partners';
+import ExtraPagesHeader from './../../components/extraPagesHeader/ExtraPagesHeader';
+import ExperienceAbout from './../../components/experienceAbot/ExperienceAbout';
+import images from './../../images/index';
+import AgencyResults from './../../components/agencyResults/AgencyResults';
+import Teams from './../../components/teams/Teams';
+import Opinion from './../../components/opinion/Opinion';
+import Partners from './../../components/partners/Partners';
 
 function AboutUs() {
 	return (

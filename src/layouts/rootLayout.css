@@ -257,7 +257,6 @@ footer {
 
 .footer-top-section .send-phoneNumber {
 	height: 50px;
-	padding: 0 0 0 20px;
 	width: 40%;
 	background-color: var(--primary-color);
 	border-radius: 6px;
@@ -267,13 +266,20 @@ footer {
 	overflow: hidden;
 }
 
+.footer-top-section .send-phoneNumber .success-message h2 {
+	font-size: 18px;
+	color: var(--primary-main-color);
+	font-weight: 500;
+	padding-left: 20px;
+}
+
 .footer-top-section .send-phoneNumber input {
 	border: none;
 	font-size: 16px;
-	width: 90%;
+	width: 100%;
 }
 
-.footer-top-section .send-phoneNumber i {
+.footer-top-section .send-phoneNumber button {
 	width: 15%;
 	height: 100%;
 	font-size: 20px;
@@ -282,6 +288,10 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.footer-top-section .send-phoneNumber button:focus {
+	outline: none;
 }
 
 .main-footer {
@@ -642,7 +652,6 @@ p {
 	}
 
 	.footer-top-section .send-phoneNumber {
-		padding: 20px;
 		width: 80%;
 		margin-bottom: 20px;
 	}
