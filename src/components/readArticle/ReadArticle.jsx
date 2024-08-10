@@ -7,11 +7,14 @@ import useFetch from './../../hooks/useFetch';
 import { formatDate } from '../../utils/formatDate';
 import PopularPosts from '../popularPosts/PopularPosts';
 import { useState } from 'react';
+import Comments from '../comments/Comments';
+import CommentPost from '../commentPost/CommentPost';
 
 
 function ReadArticle() {
     const { id } = useParams()
     const { data: article, loading, error } = useFetch(() => BlogArticle.readArticle(id));
+    console.log(article);
 
     const [copied, setCopied] = useState(false);
 
@@ -72,6 +75,8 @@ function ReadArticle() {
                                 {copied && <p className='copied'>Nusxalandi</p>}
                             </p>
                         </div>
+                        <Comments articleComments={article.comments && article.comments} loading={loading} error={error} />
+                        <CommentPost id={id}/>
                     </div>
                 </div>
                 <div className="blog-tags">

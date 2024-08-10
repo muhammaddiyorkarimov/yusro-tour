@@ -37,7 +37,9 @@ header .main-head .social-media span {
 }
 
 header .main-head .navbar {
-	display: flex;
+	padding-left: 10px;
+	width: 50%;
+	display: flex !important;
 	gap: 20px;
 }
 
@@ -187,8 +189,10 @@ header .main-head .navbar a:hover {
 }
 
 .header-details .navbar {
+	width: 100%;
 	display: flex;
-	gap: 50px;
+	justify-content: space-evenly;
+	align-items: start;
 }
 
 .header-details .navbar a {

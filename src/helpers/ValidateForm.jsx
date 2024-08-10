@@ -1,4 +1,4 @@
-const ValidateForm = ({name, phoneNumber}) => {
+const ValidateForm = ({name, phoneNumber, username, password}) => {
     const errors = {};
     const placeholders = {};
     if (!name) {
@@ -8,6 +8,14 @@ const ValidateForm = ({name, phoneNumber}) => {
     if (!phoneNumber) {
         errors.phoneNumber = "Telefon raqami maydoni talab qilinadi.";
         placeholders.phoneNumber = "Telefon raqami maydoni talab qilinadi.";
+    }
+    if (!username) {
+        errors.username = "Kiritilishi shart";
+        placeholders.username = "Kiritilishi shart";
+    }
+    if (!password) {
+        errors.password = "Kiritilishi shart";
+        placeholders.password = "Kiritilishi shart";
     }
     return { errors, placeholders };
 };

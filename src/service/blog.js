@@ -28,6 +28,13 @@ const BlogArticle = {
     const response = await axios.get(`/post/articles/${id}`);
     return response.data;
   },
+
+  // post comment
+  async postComment(user) {
+    console.log(user);
+    const response = await axios.post(`/post/comments/`, user);
+    return response.data;
+  },
   
 };
 

@@ -115,11 +115,11 @@
 	border-radius: 10px;
 }
 
-ul {
+.package-content ul {
 	width: 100%;
 	min-height: 100px;
 	max-height: 280px;
-	background-color: var(--primary-color);
+	background-color: var(--primary-color) !important;
 	list-style: none;
 	padding: 30px 20px  !important;
 	text-align: left;
